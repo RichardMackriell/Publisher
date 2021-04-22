@@ -1,0 +1,11 @@
+header {
+    width:100vw;
+}
+ul {
+    list-style: none;
+    display:flex;
+    li {
+        flex: auto;
+        padding:20px;
+    }
+}

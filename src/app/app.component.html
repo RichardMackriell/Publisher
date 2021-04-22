@@ -1,0 +1,12 @@
+<!-- <h1>The title of this page is {{title}}</h1>
+<button (click)="getPublishers()">Get Publishers</button>
+<button (click)="clear()">Clear</button>
+<ul *ngIf="publishers">
+  <li *ngFor="let pub of publishers">{{ pub | json }}</li>
+</ul>-->
+<app-main-menu></app-main-menu>
+<app-login-page></app-login-page>
+<div style="color: #F00;" *ngIf="isLoggedIn">
+  <h2>I'm Logged In</h2>
+</div>
+<router-outlet></router-outlet>

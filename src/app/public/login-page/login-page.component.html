@@ -1,0 +1,16 @@
+<div class="login-box">
+    <form #form="ngForm">
+        <input [(ngModel)]="username" placeholder="username" name="username">
+        <br />        
+        <input [(ngModel)]="password" type="password" placeholder="password" name="password" />
+        <br />
+        <button type="button" (click)="login()">Login</button>
+    </form>
+</div>
+<div>
+    <span>Username: {{username}}</span>
+    <br/>
+    <span>Password: {{password}}</span>
+    <br/>
+    <span>Logged in: {{loggedIn}}</span>
+</div>
