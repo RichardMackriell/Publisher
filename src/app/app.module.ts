@@ -9,7 +9,13 @@ import { AboutPageComponent } from './public/about-page/about-page.component';
 import { HomePageComponent } from './public/home-page/home-page.component';
 import { LoginPageComponent } from './public/login-page/login-page.component';
 import { AdminModule } from './admin/admin.module';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { StatefulPipe } from './pipes/stateful.pipe';
+import { PipeTestComponent } from './public/pipe-test/pipe-test.component';
+import { InstancesPipe } from './pipes/instances.pipe';
+import { ParentComponent } from './public/parent/parent.component';
+import { ChildComponent } from './public/child/child.component';
+import { SubChildComponent } from './public/sub-child/sub-child.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +24,19 @@ import { FormsModule } from '@angular/forms';
     AboutPageComponent,
     HomePageComponent,
     LoginPageComponent,
+    StatefulPipe,
+    PipeTestComponent,
+    InstancesPipe,
+    ParentComponent,
+    ChildComponent,
+    SubChildComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     AdminModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

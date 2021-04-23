@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +14,10 @@ export class AuthService {
     return this.isLoggedIn;
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  login(username: string, password: string): boolean {
-    if(username === "mackriel" && password === "hello") {
+  login(data: {username: string, password: string}): boolean {
+    if(data.username === "mackriel" && data.password === "hello") {
       this.isLoggedIn = true;
     }
     else {
@@ -23,5 +25,12 @@ export class AuthService {
     }
     this.onLoggedIn.emit(this.isLoggedIn);
     return this.isLoggedIn;
+  }
+  emailRegistered(email: string): Observable<boolean> {
+    return this.http.post<boolean>(
+      'https://localhost:44391/api/Publishers/EmailAlreadyRegistered',
+      {
+        email: email
+      });
   }
 }

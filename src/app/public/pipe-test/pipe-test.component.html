@@ -1,0 +1,8 @@
+<p>pipe-test works!</p>
+
+
+<button (click)="doNothing()">Go</button>
+
+<ul>
+    <li *ngFor="let pub of publishers | async">{{ pub | json }}</li>
+</ul>

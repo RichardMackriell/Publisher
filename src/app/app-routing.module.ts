@@ -3,12 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutPageComponent } from './public/about-page/about-page.component';
 import { HomePageComponent } from './public/home-page/home-page.component';
 import { LoginPageComponent } from './public/login-page/login-page.component';
+import { ParentComponent } from './public/parent/parent.component';
+import { PipeTestComponent } from './public/pipe-test/pipe-test.component';
 
 
 const routes: Routes = [
   { path: 'home/:id', component: HomePageComponent },
   { path: 'about', component: AboutPageComponent },
-  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  { path: 'pipes', component: PipeTestComponent },
+  { path: 'projection', component: ParentComponent }
   //{ path: 'login', component: LoginPageComponent }
 ];
 
