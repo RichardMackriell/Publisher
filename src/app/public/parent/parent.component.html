@@ -1,6 +1,10 @@
-<p>parent works!</p>
-<app-child #child>
-    <app-sub-child></app-sub-child>
-</app-child>
+<p style="text-decoration: 'underline'" appChangeColour [colour]="colourOutputValue" weight="1000">parent works!</p>
+<p>{{words}}</p>
+
+<app-child *ngIf="showChild" (nextWordEvent)="onNextWord($event)"></app-child>
+
+
 
 <button (click)="changeChild()">Change</button>
+
+<button (click)="toggleShowChild()">Toggle Child</button>

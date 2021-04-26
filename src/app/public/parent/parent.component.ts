@@ -8,7 +8,13 @@ import { ChildComponent } from '../child/child.component';
 })
 export class ParentComponent implements OnInit {
 
-  @ViewChild('child') childComponent: ChildComponent;
+  colourOutputValue = 'orange';
+
+  showChild = true;
+
+  @ViewChild(ChildComponent) childComponent: ChildComponent;
+
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,5 +23,11 @@ export class ParentComponent implements OnInit {
   changeChild() {
     this.childComponent.changeColour();
   }
-
+  toggleShowChild() {
+    this.showChild = !this.showChild;
+  }
+  words: string;
+  onNextWord(value: string) {
+    this.words = this.words + " " + value;
+  }
 }

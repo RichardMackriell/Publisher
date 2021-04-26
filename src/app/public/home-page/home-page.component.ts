@@ -1,5 +1,5 @@
 import { query } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MultiService } from 'src/app/services/multi.service';
 
@@ -9,6 +9,10 @@ import { MultiService } from 'src/app/services/multi.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+
+
+
+  showHeading = false;
 
   specialMessage: string;
   id: string;

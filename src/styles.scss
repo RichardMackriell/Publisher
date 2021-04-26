@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+// import(...) from angular/material
+
+button {
+    text-decoration: none;
+    font-weight: 100;
+    background-color: rosybrown;
+}
+
+// .... Globally applied custom css

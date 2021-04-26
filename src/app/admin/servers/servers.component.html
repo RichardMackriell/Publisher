@@ -1,0 +1,8 @@
+<p>servers works!</p>
+
+<ul>
+    <li *ngFor="let server of servers">
+        {{server.name}} 
+        <a [routerLink]="['/server', server.id]">View</a>
+    </li>
+</ul>

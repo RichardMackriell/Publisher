@@ -40,36 +40,37 @@ export class LoginPageComponent implements OnInit {
       age: this.fb.control('', this.ofDrinkingAge('UK'))    
     });
     
-    this.username.valueChanges.pipe(
-      debounceTime(500)
-    ).subscribe(
-      value => {
-        if(this.emailSubscription && !this.emailSubscription.closed)
-          this.emailSubscription.unsubscribe();
+    // this.username.valueChanges.pipe(
+    //   debounceTime(500)
+    // ).subscribe(
+    //   value => {
+    //     if(this.emailSubscription && !this.emailSubscription.closed)
+    //       this.emailSubscription.unsubscribe();
 
-        this.emailSubscription = this.authService.emailRegistered(value).subscribe(
-          result => {
-            console.log(result);
-            if(result)
-              this.username.setErrors(null);
-          },
-          error => {
-            this.username.setErrors({
-              emailTaken: true
-            });
-          }
-        );
-      }
-    );
+    //     this.emailSubscription = this.authService.emailRegistered(value).subscribe(
+    //       result => {
+    //         console.log(result);
+    //         if(result)
+    //           this.username.setErrors(null);
+    //       },
+    //       error => {
+    //         this.username.setErrors({
+    //           emailTaken: true
+    //         });
+    //       }
+    //     );
+    //   }
+    // );
   }
 
 
   login() {
-    this.loginForm.markAllAsTouched();
+    this.authService.login(this.loginForm.value);
+    // this.loginForm.markAllAsTouched();
 
-    if(this.loginForm.valid) {
-      this.authService.login(this.loginForm.value);
-    }
+    // if(this.loginForm.valid) {
+    //   this.authService.login(this.loginForm.value);
+    // }
   }
 
 
